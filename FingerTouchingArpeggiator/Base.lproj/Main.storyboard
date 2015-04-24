@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--iPad-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="iPad" title="iPad" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MvT-6b-zab">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <items>
+                                    <navigationItem title="FingerTouchingArpeggiator" id="Dvm-7M-p2r">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="7mw-Kw-yx5">
+                                            <connections>
+                                                <action selector="start:" destination="vXZ-lx-hvc" id="g1W-Cv-8vF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="pause" id="T4y-1f-8bJ">
+                                            <connections>
+                                                <action selector="stop:" destination="vXZ-lx-hvc" id="FMV-F2-11B"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="x:000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfI-ld-NDS">
+                                <rect key="frame" x="313" y="44" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="y:000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz1-QC-PFU">
+                                <rect key="frame" x="393" y="44" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Uz1-QC-PFU" firstAttribute="top" secondItem="MvT-6b-zab" secondAttribute="bottom" id="0hD-qC-pZI"/>
+                            <constraint firstItem="MvT-6b-zab" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Hmu-6Q-t2k"/>
+                            <constraint firstAttribute="trailing" secondItem="MvT-6b-zab" secondAttribute="trailing" symbolic="YES" id="Mjk-RZ-Ku4"/>
+                            <constraint firstAttribute="centerX" secondItem="JfI-ld-NDS" secondAttribute="centerX" constant="40" id="bNN-L9-o5U"/>
+                            <constraint firstItem="MvT-6b-zab" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" symbolic="YES" id="gbR-Sc-Hh2"/>
+                            <constraint firstAttribute="centerX" secondItem="Uz1-QC-PFU" secondAttribute="centerX" constant="-40" id="u1y-O5-1JQ"/>
+                            <constraint firstItem="JfI-ld-NDS" firstAttribute="top" secondItem="MvT-6b-zab" secondAttribute="bottom" id="xju-1h-ZPb"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="label1" destination="JfI-ld-NDS" id="mtK-1F-hNi"/>
+                        <outlet property="label2" destination="Uz1-QC-PFU" id="v9L-vB-jsH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="118"/>
+        </scene>
+        <!--iPhone4-->
+        <scene sceneID="s6Z-r5-IfG">
+            <objects>
+                <viewController storyboardIdentifier="iPhone4" title="iPhone4" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7RM-xy-e2q" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UMP-Ak-s5s"/>
+                        <viewControllerLayoutGuide type="bottom" id="eeo-2l-kXA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0qO-qW-mc0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2X-xE-wkA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="FingerTouchingArpeggiator" id="5Ef-dG-Wke">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="7lt-uf-7AL">
+                                            <connections>
+                                                <action selector="start:" destination="7RM-xy-e2q" id="tVT-ZM-neC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="pause" id="uGP-hW-ArB">
+                                            <connections>
+                                                <action selector="stop:" destination="7RM-xy-e2q" id="ehN-IA-oe0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="x:000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9m-c1-YJE">
+                                <rect key="frame" x="89" y="44" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="y:000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jw-Kg-5bU">
+                                <rect key="frame" x="169" y="44" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5jw-Kg-5bU" firstAttribute="top" secondItem="w2X-xE-wkA" secondAttribute="bottom" id="8B1-Qp-nYZ"/>
+                            <constraint firstAttribute="centerX" secondItem="U9m-c1-YJE" secondAttribute="centerX" constant="40" id="BbY-TB-mFn"/>
+                            <constraint firstAttribute="centerX" secondItem="5jw-Kg-5bU" secondAttribute="centerX" constant="-40" id="YLH-9f-LTS"/>
+                            <constraint firstItem="U9m-c1-YJE" firstAttribute="top" secondItem="w2X-xE-wkA" secondAttribute="bottom" id="bx8-kx-b7X"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="label1" destination="U9m-c1-YJE" id="MYB-Rc-nM5"/>
+                        <outlet property="label2" destination="5jw-Kg-5bU" id="C98-R9-GdM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="55f-QW-4Hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="-760"/>
+        </scene>
+        <!--iPhone-->
+        <scene sceneID="lkE-ba-azQ">
+            <objects>
+                <viewController storyboardIdentifier="iPhone" title="iPhone" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eqJ-ds-wA6" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d0c-aV-8Px"/>
+                        <viewControllerLayoutGuide type="bottom" id="RP0-Ww-qpK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6A4-Xh-SqB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sgw-h6-anH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="FingerTouchingArpeggiator" id="Uqg-h0-BqD">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="7Ri-cO-ULs">
+                                            <connections>
+                                                <action selector="start:" destination="eqJ-ds-wA6" id="201-8Q-arP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="pause" id="3DF-iT-6MN">
+                                            <connections>
+                                                <action selector="stop:" destination="eqJ-ds-wA6" id="k1V-Gu-79c"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="x:000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXt-CH-uvo">
+                                <rect key="frame" x="89" y="44" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="y:000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBC-ik-OUj">
+                                <rect key="frame" x="169" y="44" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="IXt-CH-uvo" secondAttribute="centerX" constant="40" id="4HT-qj-OTq"/>
+                            <constraint firstAttribute="centerX" secondItem="TBC-ik-OUj" secondAttribute="centerX" constant="-40" id="8o7-3d-8jy"/>
+                            <constraint firstItem="IXt-CH-uvo" firstAttribute="top" secondItem="sgw-h6-anH" secondAttribute="bottom" id="eW1-RJ-aJe"/>
+                            <constraint firstItem="TBC-ik-OUj" firstAttribute="top" secondItem="sgw-h6-anH" secondAttribute="bottom" id="iZK-5l-plS"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="label1" destination="IXt-CH-uvo" id="7MU-bg-zhn"/>
+                        <outlet property="label2" destination="TBC-ik-OUj" id="XsQ-fZ-b10"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNV-ME-dPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805" y="-64"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
