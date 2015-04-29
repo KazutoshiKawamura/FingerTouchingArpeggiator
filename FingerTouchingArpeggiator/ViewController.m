@@ -16,16 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [UIApplication sharedApplication].statusBarHidden = YES;
-//    [self.view setFrame:[[UIScreen mainScreen] bounds]];
+    //    [UIApplication sharedApplication].statusBarHidden = YES;
+    //    [self.view setFrame:[[UIScreen mainScreen] bounds]];
     // Do any additional setup after loading the view, typically from a nib.
-
+    
     AppDelegate *aD = [[AppDelegate alloc] init];
     
     if (aD.is_iPhone4) {
         scrWidth = 640;
         scrHeight = 960;
-        circleRad = 30;
+        circleRad = 15;
     }else if (aD.is_iPad) {
         scrWidth = 768;
         scrHeight = 1024;
@@ -35,6 +35,9 @@
         scrHeight = 1136;
         circleRad = 15;
     }
+    
+    csvArray = [ViewController getDataFromCSV:@"1008nomaSlab"];
+    
     
     //周波数（音程）
     _frequency = 0;
@@ -63,11 +66,11 @@
     UIImage *image = [self imageFillEllipseWithColor:color size:size];
     
     // 生成したUIImageオブジェクトをImageViewに設定する
-//    circleView.image = image;
+    //    circleView.image = image;
     circleView = [[UIImageView alloc] initWithImage:image];
-//    circleView.frame = self.view.bounds;
-
-
+    //    circleView.frame = self.view.bounds;
+    
+    
     
 }
 
@@ -97,6 +100,14 @@
          　repeats:NO
          ];
     }
+    csvTimer =
+    [NSTimer
+     　scheduledTimerWithTimeInterval:(double)(barTime/noteFraction/2)/1000
+     　target:self
+     　selector:@selector(upDate0:)
+     　userInfo:nil
+     　repeats:NO
+     ];
 }
 
 -(IBAction)stop:(id)sender{
@@ -116,7 +127,7 @@
     label2.text = [NSString stringWithFormat:@"y:%.1f",point.y];
     //    _frequency = point.x;
     [self getParameter];
-//    [self getCode];
+    //    [self getCode];
     [circleView setFrame:CGRectMake(point.x-circleRad,point.y-circleRad,2*circleRad,2*circleRad)];
     [self.view addSubview:circleView];
 }
@@ -127,7 +138,7 @@
     label2.text = [NSString stringWithFormat:@"y:%.1f",point.y];
     //    _frequency = point.x;
     [self getParameter];
-//    [self getCode];
+    //    [self getCode];
     [circleView setFrame:CGRectMake(point.x-circleRad,point.y-circleRad,2*circleRad,2*circleRad)];
     [self.view addSubview:circleView];
 }
@@ -138,7 +149,7 @@
     difY = 0;
 }
 
-- (UIImage *)imageFillEllipseWithColor:(UIColor *)color size:(CGSize)size {
+-(UIImage *)imageFillEllipseWithColor:(UIColor *)color size:(CGSize)size {
     UIImage *image = nil;
     
     // ビットマップ形式のグラフィックスコンテキストの生成
@@ -309,19 +320,19 @@ static OSStatus renderer(void *inRef,
     //    label1.text = [NSString stringWithFormat:@"%d",noteNumberCount];
     _frequency = 440 * pow(2,((getNote-69)/12));
     
-//    if (difY < 0) {
-//        bpm = bpm + 3;
-//    }else if (difY > 0) {
-//        bpm = bpm - 3;
-//    }else{
-//        if (bpm > 120) {
-//            bpm = bpm - 2;
-//        }else if (bpm < 120) {
-//            bpm = bpm + 2;
-//        }
-//    }
+    //    if (difY < 0) {
+    //        bpm = bpm + 3;
+    //    }else if (difY > 0) {
+    //        bpm = bpm - 3;
+    //    }else{
+    //        if (bpm > 120) {
+    //            bpm = bpm - 2;
+    //        }else if (bpm < 120) {
+    //            bpm = bpm + 2;
+    //        }
+    //    }
     
-
+    
     bpm = bpm - difY;
     if(difY == 0) {
         if (bpm > 140) {
@@ -349,8 +360,6 @@ static OSStatus renderer(void *inRef,
     }
 }
 
--(void)changePattern{
-}
 
 -(void)getCode{
     
@@ -372,31 +381,30 @@ static OSStatus renderer(void *inRef,
     //        note[1] = note[1] - 1;
     //    }
     
-}
-
--(void)getPattern{
+    //}
     
-        if (difX < -3) {
-            for (int i = 0; i < 32; i++) {
-                noteNumber[i] = i%4;
-            }
-        }else if (difX > 3) {
-            for (int i = 0; i < 32; i++) {
-                noteNumber[i] = (31-i)%4;
-            }
-        }else {
-            for (int i = 0; i < 8; i++) {
-                if (i < 5) {
-                    noteNumber[i] = i;
-                }else{
-                    noteNumber[i] = 8 - i;
-                }
-            }
-            for (int i = 8; i < 32; i++) {
-                noteNumber[i] = noteNumber[i-8];
+    
+    if (difX < -3) {
+        for (int i = 0; i < 32; i++) {
+            noteNumber[i] = i%4;
+        }
+    }else if (difX > 3) {
+        for (int i = 0; i < 32; i++) {
+            noteNumber[i] = (31-i)%4;
+        }
+    }else {
+        for (int i = 0; i < 8; i++) {
+            if (i < 5) {
+                noteNumber[i] = i;
+            }else{
+                noteNumber[i] = 8 - i;
             }
         }
-//            else if ((int)x <= scrWidth*4/8) {
+        for (int i = 8; i < 32; i++) {
+            noteNumber[i] = noteNumber[i-8];
+        }
+    }
+    //            else if ((int)x <= scrWidth*4/8) {
     //        for (int i = 0; i < 32; i++) {
     //            int r = (int)arc4random_uniform(9999999);
     //            noteNumber[i] = (r%(int)pow(10, (double)((i + 2)%7)))/(int)pow(10, (double)(i%7))%5;
@@ -431,11 +439,39 @@ static OSStatus renderer(void *inRef,
     //        }
     //    }
     
-            
-//    for (int i = 0; i < 32; i++) {
-//        noteNumber[i] = i%4;
-//    }
     
+    //    for (int i = 0; i < 32; i++) {
+    //        noteNumber[i] = i%4;
+    //    }
+    
+}
+
++(NSMutableArray *)getDataFromCSV:(NSString *)csvFileName{
+    // CSVファイルからセクションデータを取得する
+    NSString *csvFile = [[NSBundle mainBundle] pathForResource:csvFileName ofType:@"csv"];
+    //    NSLog(@"%@",csvFile);
+    NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
+    //    NSLog(@"%@",csvData);
+    NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
+    //    NSLog(@"%@",csv);
+    NSScanner *scanner = [NSScanner scannerWithString:csv];
+    // 改行文字の選定
+    NSCharacterSet *chSet = [NSCharacterSet newlineCharacterSet];
+    NSString *line;
+    
+    // レコードを入れる NSMutableArray
+    NSMutableArray *row = [NSMutableArray array];
+    
+    while (![scanner isAtEnd]) {
+        // 一行づつ読み込んでいく
+        [scanner scanUpToCharactersFromSet:chSet intoString:&line];
+        NSArray *string = [line componentsSeparatedByString:@","];
+        [row addObject:string];
+        
+        // 改行文字をスキップ
+        [scanner scanCharactersFromSet:chSet intoString:NULL];
+    }
+    return row;
 }
 
 

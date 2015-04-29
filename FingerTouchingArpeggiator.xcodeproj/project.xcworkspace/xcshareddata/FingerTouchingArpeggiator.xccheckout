@@ -12,20 +12,24 @@
 	<dict>
 		<key>57C435B8AE248A05CEAB4FBFE011489309925674</key>
 		<string>https://github.com/KazutoshiKawamura/SimpleSampler.git</string>
+		<key>A12C8F210983272DBE81132379957D44D5CDFF0D</key>
+		<string>https://github.com/KazutoshiKawamura/FingerTouchingArpeggiator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FingerTouchingArpeggiator/FingerTouchingArpeggiator.xcodeproj</string>
+	<string>FingerTouchingArpeggiator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>57C435B8AE248A05CEAB4FBFE011489309925674</key>
 		<string>../../..</string>
+		<key>A12C8F210983272DBE81132379957D44D5CDFF0D</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/KazutoshiKawamura/SimpleSampler.git</string>
+	<string>https://github.com/KazutoshiKawamura/FingerTouchingArpeggiator.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>57C435B8AE248A05CEAB4FBFE011489309925674</string>
+	<string>A12C8F210983272DBE81132379957D44D5CDFF0D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>57C435B8AE248A05CEAB4FBFE011489309925674</string>
 			<key>IDESourceControlWCCName</key>
-			<string>apps</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A12C8F210983272DBE81132379957D44D5CDFF0D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FingerTouchingArpeggiator</string>
 		</dict>
 	</array>
 </dict>

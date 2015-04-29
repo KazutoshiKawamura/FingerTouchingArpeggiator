@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C741A6D91AEA366D00051A3C /* 1008nomaSlab.csv in Resources */ = {isa = PBXBuildFile; fileRef = C741A6D61AEA366D00051A3C /* 1008nomaSlab.csv */; };
+		C741A6DA1AEA366D00051A3C /* 101218nishi-muranaka_chaos.csv in Resources */ = {isa = PBXBuildFile; fileRef = C741A6D71AEA366D00051A3C /* 101218nishi-muranaka_chaos.csv */; };
+		C741A6DB1AEA366D00051A3C /* nishi_sabun_40_2013-12-26-16-27.csv in Resources */ = {isa = PBXBuildFile; fileRef = C741A6D81AEA366D00051A3C /* nishi_sabun_40_2013-12-26-16-27.csv */; };
 		C7CBBD6A1ADE130000C82917 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBBD691ADE12FF00C82917 /* main.m */; };
 		C7CBBD6D1ADE130000C82917 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBBD6C1ADE130000C82917 /* AppDelegate.m */; };
 		C7CBBD701ADE130000C82917 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBBD6F1ADE130000C82917 /* ViewController.m */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C741A6D61AEA366D00051A3C /* 1008nomaSlab.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1008nomaSlab.csv; sourceTree = "<group>"; };
+		C741A6D71AEA366D00051A3C /* 101218nishi-muranaka_chaos.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "101218nishi-muranaka_chaos.csv"; sourceTree = "<group>"; };
+		C741A6D81AEA366D00051A3C /* nishi_sabun_40_2013-12-26-16-27.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "nishi_sabun_40_2013-12-26-16-27.csv"; sourceTree = "<group>"; };
 		C7CBBD641ADE12FF00C82917 /* FingerTouchingArpeggiator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FingerTouchingArpeggiator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CBBD681ADE12FF00C82917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7CBBD691ADE12FF00C82917 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 		C7CBBD671ADE12FF00C82917 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C741A6D61AEA366D00051A3C /* 1008nomaSlab.csv */,
+				C741A6D71AEA366D00051A3C /* 101218nishi-muranaka_chaos.csv */,
+				C741A6D81AEA366D00051A3C /* nishi_sabun_40_2013-12-26-16-27.csv */,
 				C7CBBD681ADE12FF00C82917 /* Info.plist */,
 				C7CBBD691ADE12FF00C82917 /* main.m */,
 				C7CBBD8D1ADFAD2700C82917 /* Defaults */,
@@ -219,8 +228,11 @@
 			files = (
 				C7CBBD731ADE130000C82917 /* Main.storyboard in Resources */,
 				C7CBBD911ADFAD2700C82917 /* Default-568h@2x.png in Resources */,
+				C741A6DA1AEA366D00051A3C /* 101218nishi-muranaka_chaos.csv in Resources */,
 				C7CBBD781ADE130000C82917 /* LaunchScreen.xib in Resources */,
+				C741A6D91AEA366D00051A3C /* 1008nomaSlab.csv in Resources */,
 				C7CBBD751ADE130000C82917 /* Images.xcassets in Resources */,
+				C741A6DB1AEA366D00051A3C /* nishi_sabun_40_2013-12-26-16-27.csv in Resources */,
 				C7CBBD921ADFAD2700C82917 /* Default-667h@2x.png in Resources */,
 				C7CBBD931ADFAD2700C82917 /* Default-736h@3x.png in Resources */,
 			);
